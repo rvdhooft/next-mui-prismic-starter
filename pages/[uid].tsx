@@ -16,13 +16,14 @@ interface Props {
 }
 
 const Page = ({ page, navigation, settings }: Props) => {
+  const title = `${prismicH.asText(page.data.title)} | ${prismicH.asText(
+    settings.data.siteTitle
+  )}`;
+
   return (
     <Layout navigation={navigation} settings={settings}>
       <Head>
-        <title>
-          {prismicH.asText(page.data.title)} |{' '}
-          {prismicH.asText(settings.data.siteTitle)}
-        </title>
+        <title>{title}</title>
       </Head>
       <SliceZone slices={page.data.slices} components={components} />
     </Layout>
