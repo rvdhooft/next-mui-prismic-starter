@@ -1,0 +1,143 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Lorem Ipsum",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+                "width": 4272,
+                "height": 2848
+              },
+              "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?rect=0%2C259%2C4272%2C2330&w=2200&h=1200",
+              "width": 2200,
+              "height": 1200,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 259
+                },
+                "background": "transparent"
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "text",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Lorem eiusmod tempor aute incididunt aute commodo amet tempor ipsum ad. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    "spans": []
+                  },
+                  "direction": "ltr"
+                }
+              ]
+            }
+          ],
+          [
+            "buttonLink",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            }
+          ],
+          [
+            "buttonText",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Text",
+              "value": "More Info"
+            }
+          ]
+        ]
+      },
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "image",
+            {
+              "url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzI5MTcxODE&ixlib=rb-4.0.3&q=80&rect=0%2C279%2C4608%2C2513&w=2200&h=1200",
+              "origin": {
+                "id": "5JQH9Iqnm9o",
+                "url": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHw1fHxmcnVpdHxlbnwwfHx8fDE2NzI5MTcxODE&ixlib=rb-4.0.3&q=80",
+                "width": 4608,
+                "height": 3072
+              },
+              "width": 2200,
+              "height": 1200,
+              "edit": {
+                "background": "transparent",
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 279
+                }
+              },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
+              "thumbnails": {}
+            }
+          ],
+          [
+            "text",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+                    "spans": []
+                  },
+                  "direction": "ltr"
+                }
+              ]
+            }
+          ],
+          [
+            "buttonText",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Text",
+              "value": "Asdf\nasdfasdf\nasdfasdfasdf"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "First"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "In qui enim laborum eu adipisicing commodo tempor laborum elit nostrud quis reprehenderit mollit. Ex do excepteur consequat ullamco incididunt laboris commodo tempor. Irure enim cupidatat qui magna pariatur officia ex consectetur magna ut."
+            }
+          }
+        ]
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+          "width": 4380,
+          "height": 2895
+        },
+        "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?rect=984%2C0%2C2413%2C2895&w=1000&h=1200",
+        "width": 1000,
+        "height": 1200,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 984,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "withButton",
+    "primary": {
+      "text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Ex elit ad deserunt velit enim exercitation magna est elit. Aliquip in elit sunt excepteur eu deserunt do tempor eu et reprehenderit sint cillum pariatur minim."
+            }
+          }
+        ]
+      },
+      "buttonLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://twitter.com"
+        }
+      },
+      "buttonText": {
+        "__TYPE__": "FieldContent",
+        "value": "shirt",
+        "type": "Text"
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+          "width": 5616,
+          "height": 3744
+        },
+        "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+        "width": 5616,
+        "height": 3744,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

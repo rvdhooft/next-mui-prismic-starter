@@ -1,0 +1,8 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/e05d2251-d867-42bc-b96b-cb623e093101/resourceGroups/AppGrp-GPS-Dev-rg/providers/Microsoft.Web/sites/GPSCostbookUIDev",
+  "appService.deploySubpath": "build",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "typescript", "yaml"],
+  "versionlens.suggestions.showOnStartup": true
+}
