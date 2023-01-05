@@ -14,7 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"],
+      "@/.slicemachine/*": [".slicemachine/*"],
+      "@/components/*": ["components/*"],
+      "@/public/*": ["public/*"],
+      "@/slices/*": ["slices/*"],
+      "@/theme/*": ["theme/*"],
+      "@/utils/*": ["utils/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

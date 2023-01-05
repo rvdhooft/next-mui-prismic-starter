@@ -4,9 +4,10 @@ import Head from 'next/head';
 
 import { PrismicDocument } from '@prismicio/types';
 import { GetStaticProps } from 'next';
-import { Layout } from '../components/Layout';
-import { createClient } from '../prismicio';
-import { components } from '../slices';
+import { Layout } from '@/components/Layout';
+import { createClient } from '@/prismicio';
+import { components } from '@/slices';
+import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
 
 interface Props {
   page: PrismicDocument<Record<string, any>, string, string>;
@@ -34,8 +35,10 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   const client = createClient({ previewData });
 
   const page = await client.getByUID('page', 'home', { lang: locale });
-  const navigation = await client.getSingle('navigation', { lang: locale });
-  const settings = await client.getSingle('settings', { lang: locale });
+  const { navigation, settings } = await getNavigationAndSettings(
+    client,
+    locale
+  );
 
   return {
     props: {

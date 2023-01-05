@@ -3,8 +3,8 @@ import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 
 import { Box } from '@mui/material';
 import { Content } from '@prismicio/client';
-import PrismicImage from '../../components/PrismicImage';
-import Section from '../../components/Section';
+import PrismicImage from '@/components/PrismicImage';
+import Section from '@/components/Section';
 
 const TextWithImage = ({
   slice,

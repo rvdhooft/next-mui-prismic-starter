@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { Content } from '@prismicio/client';
 import * as prismicH from '@prismicio/helpers';
 import { PrismicText, SliceComponentProps } from '@prismicio/react';
-import Section from '../../components/Section';
+import Section from '@/components/Section';
 
 const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
   if (!prismicH.isFilled.richText(slice.primary.quote)) return null;

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { PrismicNextImage, PrismicNextImageProps } from '@prismicio/next';
-import { WithSx } from '../types';
+import { WithSx } from '@/types';
 
 const PrismicImage = ({
   sx,

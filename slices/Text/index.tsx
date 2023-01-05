@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { Content } from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
-import Section from '../../components/Section';
+import Section from '@/components/Section';
 
 const Text = ({ slice }: SliceComponentProps<Content.TextSlice>) => {
   return (

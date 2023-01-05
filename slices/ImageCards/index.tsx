@@ -9,9 +9,9 @@ import {
 import { Box, Link, Typography } from '@mui/material';
 import { Content } from '@prismicio/client';
 import { ReactNode } from 'react';
-import { ConditionalWrap } from '../../components/ConditionalWrap';
-import PrismicImage from '../../components/PrismicImage';
-import Section from '../../components/Section';
+import { ConditionalWrap } from '@/components/ConditionalWrap';
+import PrismicImage from '@/components/PrismicImage';
+import Section from '@/components/Section';
 
 const ImageCard = ({ item }: { item: Content.ImageCardsSliceDefaultItem }) => {
   const image = item.image;

@@ -6,7 +6,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { IconButton } from '@mui/material';
 import { PrismicLink } from '@prismicio/react';
 import { FilledLinkToWebField } from '@prismicio/types';
-import { WithSx } from '../types';
+import { WithSx } from '@/types';
 
 interface Props {
   link: { type: string; link: FilledLinkToWebField };
