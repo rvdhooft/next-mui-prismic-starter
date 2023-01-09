@@ -6,7 +6,7 @@ import {
   SliceComponentProps,
 } from '@prismicio/react';
 
-import { Box, Link, Typography } from '@mui/material';
+import { Box, Link, Typography, useTheme } from '@mui/material';
 import { Content } from '@prismicio/client';
 import { ReactNode } from 'react';
 import { ConditionalWrap } from '@/components/ConditionalWrap';
@@ -15,6 +15,7 @@ import Section from '@/components/Section';
 
 const ImageCard = ({ item }: { item: Content.ImageCardsSliceDefaultItem }) => {
   const image = item.image;
+  const theme = useTheme();
 
   return (
     <Box component="li" display="grid" gap={3}>
@@ -27,7 +28,10 @@ const ImageCard = ({ item }: { item: Content.ImageCardsSliceDefaultItem }) => {
             </PrismicLink>
           )}
         >
-          <PrismicImage field={image} />
+          <PrismicImage
+            field={image}
+            sizes={`(min-width: ${theme.breakpoints.values.md}px) 50vw, 100vw`}
+          />
         </ConditionalWrap>
       )}
       <div>

@@ -30,9 +30,10 @@ const Hero = ({ slice }: HeroProps) => {
         <PrismicNextImage
           field={backgroundImage}
           alt=""
-          fill={true}
+          fill
           priority
           style={{ objectFit: 'cover', opacity: 0.4 }}
+          sizes="100vw"
         />
       )}
       <Box py={5} position="relative">

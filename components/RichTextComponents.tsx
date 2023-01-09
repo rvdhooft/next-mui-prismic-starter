@@ -14,7 +14,7 @@ const TypographyWithMargin = styled(Typography)({
 
 const Heading = styled(TypographyWithMargin)({
   marginTop: '3rem',
-  '&:first-child': { marginTop: 0 },
+  '&:first-of-type': { marginTop: 0 },
 }) as typeof Typography;
 
 const List = styled(TypographyWithMargin)(({ theme }) => ({

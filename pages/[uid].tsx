@@ -2,12 +2,12 @@ import * as prismicH from '@prismicio/helpers';
 import { SliceZone } from '@prismicio/react';
 import Head from 'next/head';
 
-import { PrismicDocument } from '@prismicio/types';
-import { GetStaticProps } from 'next';
 import { Layout } from '@/components/Layout';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
+import { PrismicDocument } from '@prismicio/types';
+import { GetStaticProps } from 'next';
 
 interface Props {
   page: PrismicDocument<Record<string, any>, string, string>;

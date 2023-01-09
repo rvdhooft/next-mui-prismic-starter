@@ -1,7 +1,7 @@
 import * as prismicH from '@prismicio/helpers';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { Content } from '@prismicio/client';
 import PrismicImage from '@/components/PrismicImage';
 import Section from '@/components/Section';
@@ -10,6 +10,7 @@ const TextWithImage = ({
   slice,
 }: SliceComponentProps<Content.TextWithImageSlice>) => {
   const image = slice.primary.image;
+  const theme = useTheme();
 
   return (
     <Section>
@@ -23,7 +24,12 @@ const TextWithImage = ({
           <PrismicRichText field={slice.primary.text} />
         </div>
         <div>
-          {prismicH.isFilled.image(image) && <PrismicImage field={image} />}
+          {prismicH.isFilled.image(image) && (
+            <PrismicImage
+              field={image}
+              sizes={`(min-width: ${theme.breakpoints.values.md}px) 50vw, 100vw`}
+            />
+          )}
         </div>
       </Box>
     </Section>
