@@ -104,6 +104,7 @@ export const Navigation = ({ navigation, settings }: Props) => {
           {drawer}
         </Drawer>
       </Box>
+      <Toolbar />
     </>
   );
 };

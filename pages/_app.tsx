@@ -10,8 +10,11 @@ import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppProps as NextAppProps } from 'next/app';
 
+import Fallback from '@/components/ErrorMessage';
+import MinimalFallback from '@/components/MinimalFallback';
 import theme from '@/theme';
 import createEmotionCache from '@/utils/createEmotionCache';
+import { ErrorBoundary } from 'react-error-boundary';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -32,20 +35,24 @@ export default function App({
   }
 
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <PrismicProvider
-          internalLinkComponent={({ children, ...props }: any) => (
-            <NextLink {...props}>{children}</NextLink>
-          )}
-          richTextComponents={richTextComponents}
-        >
-          <PrismicPreview repositoryName={repositoryName}>
-            <Component {...pageProps} />
-          </PrismicPreview>
-        </PrismicProvider>
-      </ThemeProvider>
-    </CacheProvider>
+    <ErrorBoundary FallbackComponent={MinimalFallback}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <PrismicProvider
+            internalLinkComponent={({ children, ...props }: any) => (
+              <NextLink {...props}>{children}</NextLink>
+            )}
+            richTextComponents={richTextComponents}
+          >
+            <PrismicPreview repositoryName={repositoryName}>
+              <ErrorBoundary FallbackComponent={Fallback}>
+                <Component {...pageProps} />
+              </ErrorBoundary>
+            </PrismicPreview>
+          </PrismicProvider>
+        </ThemeProvider>
+      </CacheProvider>
+    </ErrorBoundary>
   );
 }
