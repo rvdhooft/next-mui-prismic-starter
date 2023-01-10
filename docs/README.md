@@ -1,22 +1,17 @@
-# Prismic + Next.js Multi-Page Starter
+# Prismic + Next.js + MUI Multi-Page Starter
 
-This page covers how to use **Prismic + Next.js Multi-Page Starter** with Prismic.
+This page covers how to use **Prismic + Next.js + MUI Multi-Page Starter** with Prismic.
 
 - **Demo**: [Open live demo][live-demo]
 - **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
-
-&nbsp;
-
-<img src="https://user-images.githubusercontent.com/8601064/166617932-eaaa1643-f086-4909-9868-56234f8da98d.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
-
-&nbsp;
+- **Learn more about MUI**: [MUI Documenation][mui-docs]
 
 ## 🚀 Quick Start
 
 To start a new project using this starter, run the following commands in your terminal:
 
 ```sh
-npx degit prismicio-community/nextjs-starter-prismic-multi-page your-project-name
+npx degit rvdhooft/next-mui-prismic-starter your-project-name
 cd your-project-name
 npx @slicemachine/init
 ```
@@ -95,7 +90,7 @@ These are important files that you should leave as-is:
 
 Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
 
-Styling in this project is implemented with Tailwind CSS. See the [Tailwind docs](https://tailwindcss.com/docs) for more info.
+This project is configured to use the Material UI component library and styling system. For more detail, read the [MUI documentation][mui-docs].
 
 ### Deploy to the web
 
@@ -115,4 +110,5 @@ For the official Prismic documentation, see [Prismic's guide for Next.js](https:
 [prismic-docs]: https://prismic.io/docs/technologies/nextjs
 [prismic-sign-up]: https://prismic.io/dashboard/signup
 [nextjs]: https://nextjs.org/
-[live-demo]: https://nextjs-starter-prismic-multi-page.vercel.app/
+[live-demo]: https://next-mui-prismic-starter.vercel.app/
+[mui-docs]: https://mui.com/material-ui/getting-started/overview/
