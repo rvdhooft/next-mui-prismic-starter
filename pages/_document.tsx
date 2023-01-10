@@ -3,7 +3,6 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import theme from '@/theme';
 import { roboto } from '@/theme/_typography';
 import createEmotionCache from '@/utils/createEmotionCache';
-import { repositoryName } from '@/prismicio';
 
 export default class MyDocument extends Document {
   render() {
@@ -15,11 +14,6 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {(this.props as any).emotionStyleTags}
-          <script
-            async
-            defer
-            src={`https://static.cdn.prismic.io/prismic.js?new=true&repo=${repositoryName}`}
-          ></script>
         </Head>
         <body>
           <Main />
