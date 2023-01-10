@@ -14,11 +14,13 @@ const ErrorMessage = () => {
           Try reloading the page, or return to the{' '}
           <Link href="/">home page.</Link>
         </Typography>
-        <Typography>
-          If the error keeps occurring, please contact{' '}
-          {process.env.NEXT_PUBLIC_SUPPORT_EMAIL} with the following details and
-          include any steps to reproduce the issue.
-        </Typography>
+        {process.env.NEXT_PUBLIC_SUPPORT_EMAIL && (
+          <Typography>
+            If the error keeps occurring, please contact{' '}
+            {process.env.NEXT_PUBLIC_SUPPORT_EMAIL} with the following details
+            and include any steps to reproduce the issue.
+          </Typography>
+        )}
       </Container>
     </div>
   );
