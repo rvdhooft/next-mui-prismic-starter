@@ -22,4 +22,10 @@ const nextConfig = async () => {
   };
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = async () => {
+  return withBundleAnalyzer(await nextConfig());
+};
