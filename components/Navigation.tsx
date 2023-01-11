@@ -5,9 +5,11 @@ import {
   Divider,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
+  styled,
   Toolbar,
 } from '@mui/material';
 import * as prismicH from '@prismicio/helpers';
@@ -19,6 +21,14 @@ interface Props {
   navigation: PrismicDocument<Record<string, any>, string, string>;
   settings: PrismicDocument<Record<string, any>, string, string>;
 }
+
+const NavigationLink = styled(Link)({
+  fontSize: '0.9rem',
+  '&:hover': {
+    textDecorationThickness: '2px',
+    textUnderlineOffset: '4px',
+  },
+}) as typeof Link;
 
 const drawerWidth = 240;
 
@@ -55,18 +65,25 @@ export const Navigation = ({ navigation, settings }: Props) => {
     <>
       <AppBar component="nav" color="inherit">
         <Toolbar>
-          <PrismicLink href="/">
+          <PrismicLink
+            href="/"
+            internalComponent={NavigationLink}
+            sx={{ fontSize: '1.1rem' }}
+          >
             <PrismicText field={settings.data.siteTitle} />
           </PrismicLink>
           <Box
             component="ul"
             flexWrap="wrap"
             gap={6}
-            sx={{ ml: 4, display: { xs: 'none', sm: 'flex' } }}
+            sx={{ ml: 6, display: { xs: 'none', sm: 'flex' } }}
           >
             {navigation.data?.links.map((item: any) => (
               <li key={prismicH.asText(item.label)}>
-                <PrismicLink field={item.link}>
+                <PrismicLink
+                  field={item.link}
+                  internalComponent={NavigationLink}
+                >
                   <PrismicText field={item.label} />
                 </PrismicLink>
               </li>

@@ -20,9 +20,19 @@ The commands will do the following:
 
 1. Start a new Next.js project using this starter.
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
-3. Create a new Prismic content repository with sample content.
+3. Create a new Prismic content repository.
 
-When you're ready to start your project, run the following command:
+Next run the following command to start up slicemachine:
+
+```sh
+npm run slicemachine
+```
+
+Navigate to `http://localhost:9999`, open the Changes tab, and click the Push Changes button to push the custom content types to Prismic.
+
+Now if you refresh the Prismic content repository, you should be able to add some content. Create at least one page, settings, and navigation.
+
+When your content is created, you're ready to run the project:
 
 ```sh
 npm run dev

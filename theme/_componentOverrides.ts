@@ -46,6 +46,19 @@ const componentOverrides = {
     defaultProps: {
       component: LinkBehavior,
     } as LinkProps,
+    styleOverrides: {
+      root: {
+        color: '#343434',
+        fontWeight: '500',
+        textDecoration: 'none',
+        fontSize: '1rem',
+        '&:hover': {
+          textDecoration: 'underline',
+          textDecorationThickness: '1px',
+          textUnderlineOffset: '2px',
+        },
+      },
+    },
   },
   MuiPaper: {
     variants: [

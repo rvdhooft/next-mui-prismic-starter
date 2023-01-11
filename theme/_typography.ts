@@ -7,7 +7,7 @@ export const roboto = Roboto({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
-const h1Size = 2;
+const h1Size = 2.5;
 const headingStyles = {
   fontWeight: 300,
 };

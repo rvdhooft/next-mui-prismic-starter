@@ -29,7 +29,8 @@ const palette = {
   },
   neutral: {
     main: '#f3f3f3',
-    dark: '#898989',
+    dark: '#b1b1b1',
+
     contrastText: 'rgba(0,0,0,0.87)',
   },
 };

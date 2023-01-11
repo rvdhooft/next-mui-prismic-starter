@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Link } from '@mui/material';
 import { PrismicLink } from '@prismicio/react';
 import { PrismicDocument } from '@prismicio/types';
 import SocialLink from './SocialLink';
@@ -17,6 +17,7 @@ const Footer = ({ navigation }: Props) => {
       py={4}
       gap={4}
       bgcolor={(theme) => theme.palette.neutral?.main}
+      alignItems="center"
     >
       <Box>
         {navigation.data.social_links?.map((link: any) => (
@@ -26,7 +27,14 @@ const Footer = ({ navigation }: Props) => {
       <Box>
         {navigation.data.footer_links?.map((link: any) => (
           <Box key={link.label}>
-            <PrismicLink field={link.link}>{link.label}</PrismicLink>
+            <PrismicLink
+              field={link.link}
+              internalComponent={Link}
+              externalComponent={Link}
+              sx={{ fontSize: '0.825rem' }}
+            >
+              {link.label}
+            </PrismicLink>
           </Box>
         ))}
       </Box>

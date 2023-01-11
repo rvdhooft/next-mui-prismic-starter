@@ -9,7 +9,7 @@ const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
 
   return (
     <Section>
-      <figure>
+      <Box component="figure" mx={0}>
         <blockquote>
           <Typography
             variant="h2"
@@ -22,7 +22,7 @@ const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
           >
             <Box
               component="span"
-              ml={-3.5}
+              ml={-1.25}
               color={(theme) => theme.palette.neutral?.dark}
             >
               &ldquo;
@@ -41,7 +41,7 @@ const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
             &mdash; {slice.primary.source}
           </Box>
         )}
-      </figure>
+      </Box>
     </Section>
   );
 };

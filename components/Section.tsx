@@ -3,11 +3,12 @@ import { Container, ContainerProps, styled } from '@mui/material';
 const Section = styled((props: ContainerProps) => (
   <Container component="section" {...props} />
 ))(({ theme }) => ({
-  paddingTop: '1rem',
-  paddingBottom: '1rem',
+  marginBottom: '3.5rem',
   [theme.breakpoints.up('sm')]: {
-    paddingTop: '2rem',
-    paddingBottom: '2rem',
+    marginBottom: '4.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    marginBottom: '7rem',
   },
 }));
 

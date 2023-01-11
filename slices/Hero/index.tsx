@@ -8,16 +8,36 @@ import {
   SliceComponentProps,
 } from '@prismicio/react';
 
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography, styled } from '@mui/material';
 import { ReactNode } from 'react';
+import Section from '@/components/Section';
 
 const components: PrismicRichTextProps['components'] = {
   heading1: ({ children }: { children: ReactNode }) => (
-    <Typography component="h2" variant="h1" mb={4} mt={12}>
+    <Typography
+      component="h2"
+      variant="h1"
+      mb={3}
+      sx={{ fontSize: { xs: '2rem', md: '4rem' } }}
+      fontWeight="bold"
+    >
       {children}
     </Typography>
   ),
 };
+
+const StyledSection = styled(Section)(({ theme }) => ({
+  position: 'relative',
+  color: 'white',
+  backgroundColor: '#0f172a',
+  padding: '5rem 1rem',
+  [theme.breakpoints.up('md')]: {
+    padding: '10rem 2rem',
+  },
+  [theme.breakpoints.up('lg')]: {
+    padding: '12rem 2rem',
+  },
+}));
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -25,7 +45,7 @@ const Hero = ({ slice }: HeroProps) => {
   const backgroundImage = slice.primary.backgroundImage;
 
   return (
-    <Box component="section" position="relative" color="white" bgcolor="black">
+    <StyledSection maxWidth={false}>
       {prismicH.isFilled.image(backgroundImage) && (
         <PrismicNextImage
           field={backgroundImage}
@@ -42,10 +62,10 @@ const Hero = ({ slice }: HeroProps) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 8,
+            gap: 4,
           }}
         >
-          <Box textAlign="center">
+          <Box textAlign="center" maxWidth="42rem">
             <PrismicRichText
               field={slice.primary.text}
               components={components}
@@ -57,13 +77,15 @@ const Hero = ({ slice }: HeroProps) => {
               internalComponent={Button}
               externalComponent={Button}
               variant="contained"
+              color="neutral"
+              size="large"
             >
               {slice.primary.buttonText || 'More Info'}
             </PrismicLink>
           )}
         </Container>
       </Box>
-    </Box>
+    </StyledSection>
   );
 };
 
