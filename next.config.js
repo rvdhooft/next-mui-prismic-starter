@@ -19,6 +19,14 @@ const nextConfig = async () => {
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: locales[0],
     },
+    async rewrites() {
+      return [
+        {
+          source: '/robots.txt',
+          destination: '/api/robots',
+        },
+      ];
+    },
   };
 };
 
@@ -26,6 +34,18 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const prismicLinkResolver = (doc) => doc.uid;
+
+const withPrismicSitemap = require('@reecem/prismic-sitemap')({
+  linkResolver: prismicLinkResolver,
+  apiEndpoint: sm.apiEndpoint,
+  hostname: process.env.SITE_URL,
+  optionsMapPerDocumentType: {
+    page: { changefreq: 'monthly', priority: 1 },
+  },
+  documentTypes: ['page'],
+});
+
 module.exports = async () => {
-  return withBundleAnalyzer(await nextConfig());
+  return withPrismicSitemap(withBundleAnalyzer(await nextConfig()));
 };
