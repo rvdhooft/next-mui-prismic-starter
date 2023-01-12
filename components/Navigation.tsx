@@ -2,7 +2,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
   Box,
-  Divider,
   Drawer,
   IconButton,
   Link,
@@ -40,12 +39,11 @@ export const Navigation = ({ navigation, settings }: Props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <PrismicLink href="/">
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} py={3}>
+      <PrismicLink href="/" internalComponent={Link}>
         <PrismicText field={settings.data.siteTitle} />
       </PrismicLink>
-      <Divider />
-      <List>
+      <List sx={{ mt: 3 }}>
         {navigation.data?.links.map((item: any) => (
           <ListItem key={prismicH.asText(item.label)} disablePadding>
             <PrismicLink

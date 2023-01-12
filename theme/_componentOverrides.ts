@@ -60,6 +60,13 @@ const componentOverrides = {
       },
     },
   },
+  MuiListItemButton: {
+    styleOverrides: {
+      root: {
+        fontWeight: '500',
+      },
+    },
+  },
   MuiPaper: {
     variants: [
       {
