@@ -3,9 +3,11 @@ import { red } from '@mui/material/colors';
 declare module '@mui/material/styles' {
   interface Palette {
     neutral?: Palette['primary'];
+    focus?: Palette['primary'];
   }
   interface PaletteOptions {
     neutral?: PaletteOptions['primary'];
+    focus?: PaletteOptions['primary'];
   }
 }
 
@@ -32,6 +34,9 @@ const palette = {
     dark: '#b1b1b1',
 
     contrastText: 'rgba(0,0,0,0.87)',
+  },
+  focus: {
+    main: '#d68755',
   },
 };
 

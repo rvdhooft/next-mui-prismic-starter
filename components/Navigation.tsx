@@ -48,7 +48,7 @@ export const Navigation = ({ navigation, settings }: Props) => {
       <PrismicLink href="/" internalComponent={Link}>
         <PrismicText field={settings.siteTitle} />
       </PrismicLink>
-      <List sx={{ mt: 3 }}>
+      <List component="nav" aria-label="Main Menu" sx={{ mt: 3 }}>
         {navigation.links.map((item: any) => (
           <ListItem key={prismicH.asText(item.label)} disablePadding>
             <PrismicLink
@@ -66,7 +66,7 @@ export const Navigation = ({ navigation, settings }: Props) => {
 
   return (
     <>
-      <AppBar component="nav" color="inherit">
+      <AppBar component="header" color="inherit" aria-label="Navigation Header">
         <Toolbar>
           <PrismicLink
             href="/"
@@ -76,26 +76,26 @@ export const Navigation = ({ navigation, settings }: Props) => {
             <PrismicText field={settings.siteTitle} />
           </PrismicLink>
           <Box
-            component="ul"
+            component="nav"
+            aria-label="Main Menu"
             flexWrap="wrap"
             gap={6}
             sx={{ ml: 6, display: { xs: 'none', sm: 'flex' } }}
           >
             {navigation.links.map((item: any) => (
-              <li key={prismicH.asText(item.label)}>
-                <PrismicLink
-                  field={item.link}
-                  internalComponent={NavigationLink}
-                >
-                  <PrismicText field={item.label} />
-                </PrismicLink>
-              </li>
+              <PrismicLink
+                key={prismicH.asText(item.label)}
+                field={item.link}
+                internalComponent={NavigationLink}
+              >
+                <PrismicText field={item.label} />
+              </PrismicLink>
             ))}
           </Box>
           <Box flex={1} />
           <IconButton
             color="inherit"
-            aria-label="open drawer"
+            aria-label="open navigation drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ ml: 2, display: { sm: 'none' } }}
@@ -104,26 +104,24 @@ export const Navigation = ({ navigation, settings }: Props) => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          anchor="right"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
+      <Drawer
+        variant="temporary"
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
+            width: drawerWidth,
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
       <Toolbar />
     </>
   );

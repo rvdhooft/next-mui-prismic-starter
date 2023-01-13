@@ -1,5 +1,6 @@
 import { LinkProps } from '@mui/material';
 import LinkBehavior from './_linkBehavior';
+import palette from './_palette';
 
 // Update the Paper's variant prop options
 declare module '@mui/material/Paper' {
@@ -21,6 +22,13 @@ const componentOverrides = {
     defaultProps: {
       disableRipple: true,
       LinkComponent: LinkBehavior,
+    },
+    styleOverrides: {
+      root: {
+        '&.Mui-focusVisible': {
+          outline: `2px solid ${palette.focus.main}`,
+        },
+      },
     },
   },
   MuiCssBaseline: {
@@ -56,6 +64,9 @@ const componentOverrides = {
           textDecoration: 'underline',
           textDecorationThickness: '1px',
           textUnderlineOffset: '2px',
+        },
+        '&.Mui-focusVisible': {
+          outline: `2px solid ${palette.focus.main}`,
         },
       },
     },

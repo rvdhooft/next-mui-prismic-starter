@@ -32,7 +32,7 @@ const SocialLink = ({ link, sx }: WithSx<Props>) => {
   return (
     <PrismicLink
       field={link.link}
-      aria-label="link.type"
+      aria-label={link.type}
       externalComponent={IconButton}
       size="small"
       sx={sx}

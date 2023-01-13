@@ -13,7 +13,7 @@ const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
         <blockquote>
           <Typography
             variant="h2"
-            component="h3"
+            component="p"
             align={
               prismicH.isFilled.keyText(slice.primary.source)
                 ? 'left'
@@ -38,7 +38,7 @@ const Quote = ({ slice }: SliceComponentProps<Content.QuoteSlice>) => {
         </blockquote>
         {prismicH.isFilled.keyText(slice.primary.source) && (
           <Box component="figcaption" textAlign="right">
-            &mdash; {slice.primary.source}
+            &mdash; <cite>{slice.primary.source}</cite>
           </Box>
         )}
       </Box>

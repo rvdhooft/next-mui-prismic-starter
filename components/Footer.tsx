@@ -12,6 +12,7 @@ const Footer = ({ navigation }: Props) => {
 
   return (
     <Box
+      component="footer"
       display="flex"
       px={5}
       py={4}
@@ -19,12 +20,12 @@ const Footer = ({ navigation }: Props) => {
       bgcolor={(theme) => theme.palette.neutral?.main}
       alignItems="center"
     >
-      <Box>
+      <Box component="nav" aria-label="Social Navigation">
         {navigation.social_links?.map((link: any) => (
           <SocialLink key={link.type} link={link} />
         ))}
       </Box>
-      <Box>
+      <Box component="nav" aria-label="Utility Navigation">
         {navigation.footer_links?.map((link: any) => (
           <Box key={link.label}>
             <PrismicLink
