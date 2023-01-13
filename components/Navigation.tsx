@@ -1,3 +1,7 @@
+import {
+  NavigationDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   AppBar,
@@ -13,12 +17,11 @@ import {
 } from '@mui/material';
 import * as prismicH from '@prismicio/helpers';
 import { PrismicLink, PrismicText } from '@prismicio/react';
-import { PrismicDocument } from '@prismicio/types';
 import { useState } from 'react';
 
 interface Props {
-  navigation: PrismicDocument<Record<string, any>, string, string>;
-  settings: PrismicDocument<Record<string, any>, string, string>;
+  navigation: NavigationDocumentData | undefined;
+  settings: SettingsDocumentData | undefined;
 }
 
 const NavigationLink = styled(Link)({
@@ -38,13 +41,15 @@ export const Navigation = ({ navigation, settings }: Props) => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  if (!navigation || !settings) return null;
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }} py={3}>
       <PrismicLink href="/" internalComponent={Link}>
-        <PrismicText field={settings.data.siteTitle} />
+        <PrismicText field={settings.siteTitle} />
       </PrismicLink>
       <List sx={{ mt: 3 }}>
-        {navigation.data?.links.map((item: any) => (
+        {navigation.links.map((item: any) => (
           <ListItem key={prismicH.asText(item.label)} disablePadding>
             <PrismicLink
               internalComponent={ListItemButton}
@@ -68,7 +73,7 @@ export const Navigation = ({ navigation, settings }: Props) => {
             internalComponent={NavigationLink}
             sx={{ fontSize: '1.1rem' }}
           >
-            <PrismicText field={settings.data.siteTitle} />
+            <PrismicText field={settings.siteTitle} />
           </PrismicLink>
           <Box
             component="ul"
@@ -76,7 +81,7 @@ export const Navigation = ({ navigation, settings }: Props) => {
             gap={6}
             sx={{ ml: 6, display: { xs: 'none', sm: 'flex' } }}
           >
-            {navigation.data?.links.map((item: any) => (
+            {navigation.links.map((item: any) => (
               <li key={prismicH.asText(item.label)}>
                 <PrismicLink
                   field={item.link}

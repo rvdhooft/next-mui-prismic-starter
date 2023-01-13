@@ -14,6 +14,15 @@
           "single": "heading1"
         }
       }
+    },
+    "SEO": {
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      }
     }
   }
 }

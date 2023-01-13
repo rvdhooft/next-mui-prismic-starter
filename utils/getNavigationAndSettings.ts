@@ -1,6 +1,9 @@
+import {
+  AllDocumentTypes,
+  NavigationDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import * as prismic from '@prismicio/client';
-import { PrismicDocument } from '@prismicio/types';
-import { AllDocumentTypes } from '@/.slicemachine/prismicio';
 
 const getNavigationAndSettings = async (
   client: prismic.Client<AllDocumentTypes>,
@@ -12,13 +15,15 @@ const getNavigationAndSettings = async (
     ],
     lang: locale,
   });
+
+  const navigation = response.results.find((x) => x.type === 'navigation')
+    ?.data as NavigationDocumentData | undefined;
+  const settings = response.results.find((x) => x.type === 'settings')?.data as
+    | SettingsDocumentData
+    | undefined;
   return {
-    navigation: response.results.find(
-      (x) => x.type === 'navigation'
-    ) as PrismicDocument<Record<string, any>, string, string>,
-    settings: response.results.find(
-      (x) => x.type === 'settings'
-    ) as PrismicDocument<Record<string, any>, string, string>,
+    navigation,
+    settings,
   };
 };
 

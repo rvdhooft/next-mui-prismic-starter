@@ -166,6 +166,41 @@ interface PageDocumentData {
      *
      */
     slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+    /**
+     * Meta Description field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    meta_description: prismicT.KeyTextField;
+    /**
+     * No Index field in *Page*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: page.noindex
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    noindex: prismicT.BooleanField;
+    /**
+     * No Follow field in *Page*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: page.nofollow
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    nofollow: prismicT.BooleanField;
 }
 /**
  * Slice for *Page → Slice Zone*
@@ -195,6 +230,17 @@ interface SettingsDocumentData {
      *
      */
     siteTitle: prismicT.TitleField;
+    /**
+     * Meta Description field in *Settings*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    meta_description: prismicT.KeyTextField;
 }
 /**
  * Settings document from Prismic

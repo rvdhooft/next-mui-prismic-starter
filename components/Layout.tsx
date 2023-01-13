@@ -1,5 +1,8 @@
+import {
+  NavigationDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import { Box } from '@mui/material';
-import { PrismicDocument } from '@prismicio/types';
 import { ReactNode } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import ErrorMessage from './ErrorMessage';
@@ -7,8 +10,8 @@ import Footer from './Footer';
 import { Navigation } from './Navigation';
 
 interface Props {
-  navigation: PrismicDocument<Record<string, any>, string, string>;
-  settings: PrismicDocument<Record<string, any>, string, string>;
+  navigation: NavigationDocumentData | undefined;
+  settings: SettingsDocumentData | undefined;
   children: ReactNode;
 }
 

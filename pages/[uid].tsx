@@ -1,31 +1,28 @@
-import * as prismicH from '@prismicio/helpers';
 import { SliceZone } from '@prismicio/react';
-import Head from 'next/head';
 
+import {
+  NavigationDocumentData,
+  PageDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import { Layout } from '@/components/Layout';
+import Seo from '@/components/Seo';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
-import { PrismicDocument } from '@prismicio/types';
 import { GetStaticProps } from 'next';
 
 interface Props {
-  page: PrismicDocument<Record<string, any>, string, string>;
-  navigation: PrismicDocument<Record<string, any>, string, string>;
-  settings: PrismicDocument<Record<string, any>, string, string>;
+  page: PageDocumentData;
+  navigation: NavigationDocumentData | undefined;
+  settings: SettingsDocumentData | undefined;
 }
 
 const Page = ({ page, navigation, settings }: Props) => {
-  const title = `${prismicH.asText(page.data.title)} | ${prismicH.asText(
-    settings.data.siteTitle
-  )}`;
-
   return (
     <Layout navigation={navigation} settings={settings}>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <Seo page={page} settings={settings} />
+      <SliceZone slices={page.slices} components={components} />
     </Layout>
   );
 };
@@ -48,6 +45,15 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 
   const client = createClient({ previewData });
   const page = await client.getByUID('page', params.uid, { lang: locale });
+  if (!page) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   const { navigation, settings } = await getNavigationAndSettings(
     client,
     locale
@@ -55,7 +61,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 
   return {
     props: {
-      page,
+      page: page.data,
       navigation,
       settings,
     },

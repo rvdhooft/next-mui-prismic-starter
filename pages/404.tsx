@@ -1,15 +1,18 @@
+import {
+  NavigationDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import { Layout } from '@/components/Layout';
 import { createClient } from '@/prismicio';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
 import { Container, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
-import { PrismicDocument } from '@prismicio/types';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
 interface Props {
-  navigation: PrismicDocument<Record<string, any>, string, string>;
-  settings: PrismicDocument<Record<string, any>, string, string>;
+  navigation: NavigationDocumentData | undefined;
+  settings: SettingsDocumentData | undefined;
 }
 
 const NotFound = ({ navigation, settings }: Props) => {

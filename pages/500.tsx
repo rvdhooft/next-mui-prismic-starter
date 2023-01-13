@@ -1,13 +1,16 @@
+import {
+  NavigationDocumentData,
+  SettingsDocumentData,
+} from '@/.slicemachine/prismicio';
 import ErrorMessage from '@/components/ErrorMessage';
 import { Layout } from '@/components/Layout';
 import { createClient } from '@/prismicio';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
-import { PrismicDocument } from '@prismicio/types';
 import { GetStaticProps } from 'next';
 
 interface Props {
-  navigation: PrismicDocument<Record<string, any>, string, string>;
-  settings: PrismicDocument<Record<string, any>, string, string>;
+  navigation: NavigationDocumentData | undefined;
+  settings: SettingsDocumentData | undefined;
 }
 
 const ErrorPage = ({ navigation, settings }: Props) => {

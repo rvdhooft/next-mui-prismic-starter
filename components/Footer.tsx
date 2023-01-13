@@ -1,14 +1,14 @@
+import { NavigationDocumentData } from '@/.slicemachine/prismicio';
 import { Box, Link } from '@mui/material';
 import { PrismicLink } from '@prismicio/react';
-import { PrismicDocument } from '@prismicio/types';
 import SocialLink from './SocialLink';
 
 interface Props {
-  navigation: PrismicDocument<Record<string, any>, string, string>;
+  navigation: NavigationDocumentData | undefined;
 }
 
 const Footer = ({ navigation }: Props) => {
-  if (!navigation?.data) return null;
+  if (!navigation) return null;
 
   return (
     <Box
@@ -20,12 +20,12 @@ const Footer = ({ navigation }: Props) => {
       alignItems="center"
     >
       <Box>
-        {navigation.data.social_links?.map((link: any) => (
+        {navigation.social_links?.map((link: any) => (
           <SocialLink key={link.type} link={link} />
         ))}
       </Box>
       <Box>
-        {navigation.data.footer_links?.map((link: any) => (
+        {navigation.footer_links?.map((link: any) => (
           <Box key={link.label}>
             <PrismicLink
               field={link.link}

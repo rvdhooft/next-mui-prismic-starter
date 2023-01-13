@@ -5,9 +5,14 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Travel"
+          "text": "Instead"
         }
       }
     ]
+  },
+  "meta_description": {
+    "__TYPE__": "FieldContent",
+    "value": "dust",
+    "type": "Text"
   }
 }
