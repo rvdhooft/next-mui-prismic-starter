@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const allowRobotsTxt = `User-agent: *
-Disallow: /api/*
-Disallow: /_next/*    
+Disallow: /api/
+Disallow: /_next/   
 Sitemap: ${process.env.SITE_URL}/sitemap.xml
 `;
 
