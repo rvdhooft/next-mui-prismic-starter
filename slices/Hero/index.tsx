@@ -12,17 +12,28 @@ import { Box, Button, Container, Typography, styled } from '@mui/material';
 import { ReactNode } from 'react';
 import Section from '@/components/Section';
 
+const Heading = styled((props) => <Typography variant="h1" {...props} />)(
+  ({ theme }) => ({
+    marginBottom: 3,
+    fontWeight: 'bold',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '4rem',
+    },
+  })
+) as typeof Typography;
+
 const components: PrismicRichTextProps['components'] = {
   heading1: ({ children }: { children: ReactNode }) => (
-    <Typography
-      component="h2"
-      variant="h1"
-      mb={3}
-      sx={{ fontSize: { xs: '2rem', md: '4rem' } }}
-      fontWeight="bold"
-    >
-      {children}
-    </Typography>
+    <Heading component="h1">{children}</Heading>
+  ),
+  heading2: ({ children }: { children: ReactNode }) => (
+    <Heading component="h2">{children}</Heading>
+  ),
+  heading3: ({ children }: { children: ReactNode }) => (
+    <Heading component="h3">{children}</Heading>
   ),
 };
 

@@ -9,13 +9,13 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Slope"
+              "text": "Plates"
             }
           },
           {
             "type": "paragraph",
             "content": {
-              "text": "Duis tempor nostrud do laboris minim nisi incididunt tempor exercitation ut dolore enim. Eu enim deserunt nisi sint proident in et."
+              "text": "Non ullamco excepteur laboris ullamco anim nisi mollit voluptate. Anim officia mollit exercitation ea sunt commodo cupidatat deserunt amet ex duis in do laborum."
             }
           }
         ]
@@ -33,7 +33,6 @@
         "type": "Text"
       },
       "backgroundImage": {
-        "__TYPE__": "ImageContent",
         "origin": {
           "id": "main",
           "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
@@ -51,6 +50,9 @@
           },
           "background": "transparent"
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
       }
     },

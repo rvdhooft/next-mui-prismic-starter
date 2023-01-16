@@ -5,5 +5,5 @@ export default {
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","name":"Default","slice_type":"hero","items":[],"primary":{"text":[{"type":"heading1","text":"Repurpose enterprise paradigms","spans":[]},{"type":"paragraph","text":"Reprehenderit sint enim culpa magna in anim sint.","spans":[]}],"buttonLink":{"link_type":"Web","url":"https://prismic.io"},"buttonText":"recontextualize 24/7 e-services","backgroundImage":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"}},"id":"_Default"}} />
-_Default.storyName = 'Default'
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"text":[{"type":"heading1","text":"Plates","spans":[]},{"type":"paragraph","text":"Non ullamco excepteur laboris ullamco anim nisi mollit voluptate. Anim officia mollit exercitation ea sunt commodo cupidatat deserunt amet ex duis in do laborum.","spans":[]}],"buttonLink":{"link_type":"Web","url":"https://slicemachine.dev"},"buttonText":"palace","backgroundImage":{"dimensions":{"width":4000,"height":6000},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1541807084-5c52b6b3adef"}},"id":"_Default","slice_type":"hero"}} />
+_Default.storyName = ''
