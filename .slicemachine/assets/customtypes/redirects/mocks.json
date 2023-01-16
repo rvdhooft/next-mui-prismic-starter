@@ -1,0 +1,35 @@
+{
+  "redirects": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "source",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "brick",
+              "type": "Text"
+            }
+          ],
+          [
+            "destination",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "instant",
+              "type": "Text"
+            }
+          ],
+          [
+            "permanent",
+            {
+              "__TYPE__": "BooleanContent",
+              "value": true
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -217,6 +217,67 @@ type PageDocumentDataSlicesSlice = HeroSlice | QuoteSlice | TextSlice | ImageSli
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for Redirects documents */
+interface RedirectsDocumentData {
+    /**
+     * Redirects field in *Redirects*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: redirects.redirects[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    redirects: prismicT.GroupField<Simplify<RedirectsDocumentDataRedirectsItem>>;
+}
+/**
+ * Item in Redirects → Redirects
+ *
+ */
+export interface RedirectsDocumentDataRedirectsItem {
+    /**
+     * Source (From) field in *Redirects → Redirects*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: redirects.redirects[].source
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    source: prismicT.KeyTextField;
+    /**
+     * Destination (To) field in *Redirects → Redirects*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: redirects.redirects[].destination
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    destination: prismicT.KeyTextField;
+    /**
+     * Permanent field in *Redirects → Redirects*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: redirects.redirects[].permanent
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    permanent: prismicT.BooleanField;
+}
+/**
+ * Redirects document from Prismic
+ *
+ * - **API ID**: `redirects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RedirectsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<RedirectsDocumentData>, "redirects", Lang>;
 /** Content for Settings documents */
 interface SettingsDocumentData {
     /**
@@ -252,7 +313,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = NavigationDocument | PageDocument | RedirectsDocument | SettingsDocument;
 /**
  * Primary content in Hero → Primary
  *
@@ -693,6 +754,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocumentDataFooterLinksItem, NavigationDocumentDataSocialLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocumentDataFooterLinksItem, NavigationDocumentDataSocialLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, RedirectsDocumentData, RedirectsDocumentDataRedirectsItem, RedirectsDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

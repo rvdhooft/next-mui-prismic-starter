@@ -95,6 +95,9 @@
     "navigation": {
       "social_links": {}
     },
-    "settings": {}
+    "settings": {},
+    "redirects": {
+      "redirect": {}
+    }
   }
 }

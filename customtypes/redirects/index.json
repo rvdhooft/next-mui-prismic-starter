@@ -1,0 +1,41 @@
+{
+  "id": "redirects",
+  "label": "Redirects",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "redirects": {
+        "type": "Group",
+        "config": {
+          "label": "Redirects",
+          "fields": {
+            "source": {
+              "type": "Text",
+              "config": {
+                "label": "Source (From)",
+                "placeholder": ""
+              }
+            },
+            "destination": {
+              "type": "Text",
+              "config": {
+                "label": "Destination (To)",
+                "placeholder": ""
+              }
+            },
+            "permanent": {
+              "type": "Boolean",
+              "config": {
+                "label": "Permanent",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

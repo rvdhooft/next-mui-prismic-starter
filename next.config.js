@@ -19,6 +19,14 @@ const nextConfig = async () => {
       // a non-locale prefixed path e.g. `/hello`
       defaultLocale: locales[0],
     },
+    async redirects() {
+      const redirectsDocument = await client.getSingle('redirects');
+      return redirectsDocument?.data?.redirects?.map((redirect) => ({
+        source: `/${redirect.source}`,
+        destination: `/${redirect.destination}`,
+        permanent: redirect.permanent,
+      }));
+    },
     async rewrites() {
       return [
         {
