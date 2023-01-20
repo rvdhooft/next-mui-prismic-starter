@@ -13,7 +13,7 @@
                 {
                   "type": "heading3",
                   "content": {
-                    "text": "Yesterday"
+                    "text": "Current"
                   }
                 }
               ]
@@ -25,7 +25,17 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "https://prismic.io"
+                "url": "http://google.com"
+              }
+            }
+          ],
+          [
+            "navigation_menu",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
               }
             }
           ]
@@ -43,7 +53,7 @@
             "label",
             {
               "__TYPE__": "FieldContent",
-              "value": "driven",
+              "value": "electric",
               "type": "Text"
             }
           ],
@@ -53,7 +63,7 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "https://prismic.io"
+                "url": "http://google.com"
               }
             }
           ]
@@ -71,7 +81,7 @@
             "type",
             {
               "__TYPE__": "FieldContent",
-              "value": "Facebook",
+              "value": "Pinterest",
               "type": "Select"
             }
           ],
@@ -81,7 +91,7 @@
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "http://twitter.com"
+                "url": "https://slicemachine.dev"
               }
             }
           ]

@@ -26,6 +26,16 @@
                 "placeholder": "Link for navigation item",
                 "select": null
               }
+            },
+            "navigation_menu": {
+              "type": "Link",
+              "config": {
+                "label": "Navigation Menu",
+                "select": "document",
+                "customtypes": [
+                  "navigation_menu"
+                ]
+              }
             }
           }
         }

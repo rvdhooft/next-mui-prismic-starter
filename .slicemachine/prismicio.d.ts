@@ -6,6 +6,46 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Navigation Menu documents */
+interface NavigationMenuDocumentData {
+    /**
+     * Title field in *Navigation Menu*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Not shown, just for organization
+     * - **API ID Path**: navigation_menu.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Navigation Menu*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation_menu.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<NavigationMenuDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Navigation Menu → Slice Zone*
+ *
+ */
+type NavigationMenuDocumentDataSlicesSlice = GroupOfLinksSlice;
+/**
+ * Navigation Menu document from Prismic
+ *
+ * - **API ID**: `navigation_menu`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationMenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationMenuDocumentData>, "navigation_menu", Lang>;
 /** Content for Navigation documents */
 interface NavigationDocumentData {
     /**
@@ -67,6 +107,16 @@ export interface NavigationDocumentDataLinksItem {
      *
      */
     link: prismicT.LinkField;
+    /**
+     * Navigation Menu field in *Navigation → Links*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: navigation.links[].navigation_menu
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    navigation_menu: prismicT.RelationField<"navigation_menu">;
 }
 /**
  * Item in Navigation → Footer Links
@@ -313,7 +363,82 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | RedirectsDocument | SettingsDocument;
+export type AllDocumentTypes = NavigationMenuDocument | NavigationDocument | PageDocument | RedirectsDocument | SettingsDocument;
+/**
+ * Primary content in GroupOfLinks → Primary
+ *
+ */
+interface GroupOfLinksSliceDefaultPrimary {
+    /**
+     * Group Name field in *GroupOfLinks → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: group_of_links.primary.group_name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    group_name: prismicT.KeyTextField;
+    /**
+     * Group Link field in *GroupOfLinks → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: Optional
+     * - **API ID Path**: group_of_links.primary.group_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    group_link: prismicT.LinkField;
+}
+/**
+ * Item in GroupOfLinks → Items
+ *
+ */
+export interface GroupOfLinksSliceDefaultItem {
+    /**
+     * Link Label field in *GroupOfLinks → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: group_of_links.items[].link_label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    link_label: prismicT.KeyTextField;
+    /**
+     * Link field in *GroupOfLinks → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: group_of_links.items[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+}
+/**
+ * Default variation for GroupOfLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `GroupOfLinks`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type GroupOfLinksSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<GroupOfLinksSliceDefaultPrimary>, Simplify<GroupOfLinksSliceDefaultItem>>;
+/**
+ * Slice variation for *GroupOfLinks*
+ *
+ */
+type GroupOfLinksSliceVariation = GroupOfLinksSliceDefault;
+/**
+ * GroupOfLinks Shared Slice
+ *
+ * - **API ID**: `group_of_links`
+ * - **Description**: `GroupOfLinks`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type GroupOfLinksSlice = prismicT.SharedSlice<"group_of_links", GroupOfLinksSliceVariation>;
 /**
  * Primary content in Hero → Primary
  *
@@ -754,6 +879,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocumentDataFooterLinksItem, NavigationDocumentDataSocialLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, RedirectsDocumentData, RedirectsDocumentDataRedirectsItem, RedirectsDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
+        export type { NavigationMenuDocumentData, NavigationMenuDocumentDataSlicesSlice, NavigationMenuDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocumentDataFooterLinksItem, NavigationDocumentDataSocialLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, RedirectsDocumentData, RedirectsDocumentDataRedirectsItem, RedirectsDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, GroupOfLinksSliceDefaultPrimary, GroupOfLinksSliceDefaultItem, GroupOfLinksSliceDefault, GroupOfLinksSliceVariation, GroupOfLinksSlice, HeroSliceDefaultPrimary, HeroSliceDefault, HeroSliceVariation, HeroSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceBannerPrimary, ImageSliceBanner, ImageSliceVariation, ImageSlice, ImageCardsSliceDefaultPrimary, ImageCardsSliceDefaultItem, ImageCardsSliceDefault, ImageCardsSliceVariation, ImageCardsSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceTwoColumnsPrimary, TextSliceTwoColumns, TextSliceVariation, TextSlice, TextWithImageSliceDefaultPrimary, TextWithImageSliceDefault, TextWithImageSliceWithButtonPrimary, TextWithImageSliceWithButton, TextWithImageSliceVariation, TextWithImageSlice };
     }
 }

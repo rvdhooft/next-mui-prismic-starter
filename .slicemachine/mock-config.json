@@ -81,6 +81,11 @@
         },
         "items": {}
       }
+    },
+    "GroupOfLinks": {
+      "default": {
+        "primary": {}
+      }
     }
   },
   "_cts": {
@@ -93,11 +98,13 @@
       }
     },
     "navigation": {
-      "social_links": {}
+      "social_links": {},
+      "links": {}
     },
     "settings": {},
     "redirects": {
       "redirect": {}
-    }
+    },
+    "navigation_menu": {}
   }
 }

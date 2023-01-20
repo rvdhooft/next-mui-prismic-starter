@@ -8,9 +8,9 @@ import {
   SliceComponentProps,
 } from '@prismicio/react';
 
-import { Box, Button, Container, Typography, styled } from '@mui/material';
-import { ReactNode } from 'react';
 import Section from '@/components/Section';
+import { Box, Button, Container, styled, Typography } from '@mui/material';
+import { ReactNode } from 'react';
 
 const Heading = styled((props) => <Typography variant="h1" {...props} />)(
   ({ theme }) => ({

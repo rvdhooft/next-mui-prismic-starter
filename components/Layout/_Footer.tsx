@@ -1,7 +1,7 @@
 import { NavigationDocumentData } from '@/.slicemachine/prismicio';
-import { Box, Link } from '@mui/material';
+import { Box } from '@mui/material';
 import { PrismicLink } from '@prismicio/react';
-import SocialLink from './SocialLink';
+import SocialLink from './_SocialLink';
 
 interface Props {
   navigation: NavigationDocumentData | undefined;
@@ -14,9 +14,10 @@ const Footer = ({ navigation }: Props) => {
     <Box
       component="footer"
       display="flex"
-      px={5}
-      py={4}
-      gap={4}
+      flexDirection={{ xs: 'column', sm: 'row' }}
+      px={{ xs: 2.5, sm: 5 }}
+      py={{ xs: 2, sm: 4 }}
+      gap={{ xs: 2, sm: 4 }}
       bgcolor={(theme) => theme.palette.neutral?.main}
       alignItems="center"
     >
@@ -25,17 +26,20 @@ const Footer = ({ navigation }: Props) => {
           <SocialLink key={link.type} link={link} />
         ))}
       </Box>
-      <Box component="nav" aria-label="Utility Navigation">
+      <Box
+        component="nav"
+        textAlign={{ xs: 'center', sm: 'left' }}
+        aria-label="Utility Navigation"
+      >
         {navigation.footer_links?.map((link: any) => (
-          <Box key={link.label}>
-            <PrismicLink
+          <Box key={link.label} mb={{ xs: 1, sm: 0 }}>
+            <Box
+              component={PrismicLink}
               field={link.link}
-              internalComponent={Link}
-              externalComponent={Link}
-              sx={{ fontSize: '0.825rem' }}
+              sx={{ fontSize: { sm: '0.825rem' } }}
             >
               {link.label}
-            </PrismicLink>
+            </Box>
           </Box>
         ))}
       </Box>

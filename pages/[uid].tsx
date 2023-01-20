@@ -5,7 +5,7 @@ import {
   PageDocumentData,
   SettingsDocumentData,
 } from '@/.slicemachine/prismicio';
-import { Layout } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import Seo from '@/components/Seo';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';

@@ -2,7 +2,7 @@ import {
   NavigationDocumentData,
   SettingsDocumentData,
 } from '@/.slicemachine/prismicio';
-import { Layout } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import { createClient } from '@/prismicio';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
 import { Container, Typography } from '@mui/material';

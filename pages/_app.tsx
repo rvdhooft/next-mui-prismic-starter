@@ -1,12 +1,11 @@
 import { PrismicPreview } from '@prismicio/next';
 import { PrismicProvider } from '@prismicio/react';
-import NextLink from 'next/link';
 
 import { repositoryName } from '@/prismicio';
 
 import richTextComponents from '@/components/RichTextComponents';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Link } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { AppProps as NextAppProps } from 'next/app';
 
@@ -40,9 +39,8 @@ export default function App({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <PrismicProvider
-            internalLinkComponent={({ children, ...props }: any) => (
-              <NextLink {...props}>{children}</NextLink>
-            )}
+            internalLinkComponent={Link}
+            externalLinkComponent={Link}
             richTextComponents={richTextComponents}
           >
             <PrismicPreview repositoryName={repositoryName}>

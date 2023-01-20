@@ -39,11 +39,7 @@ const ImageCard = ({ item }: { item: Content.ImageCardsSliceDefaultItem }) => {
       </div>
       {prismicH.isFilled.link(item.buttonLink) && (
         <div>
-          <PrismicLink
-            internalComponent={Link}
-            externalComponent={Link}
-            field={item.buttonLink}
-          >
+          <PrismicLink field={item.buttonLink}>
             {item.buttonText || 'More Info'}
           </PrismicLink>
         </div>

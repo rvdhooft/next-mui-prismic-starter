@@ -1,0 +1,59 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "steel",
+    "type": "Text"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "group_of_links$156f460f-4515-4bbd-becb-5acd6d2f54f4",
+        "name": "group_of_links",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "group_name": {
+              "__TYPE__": "FieldContent",
+              "value": "mountain",
+              "type": "Text"
+            },
+            "group_link": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "link_label",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "lamp",
+                    "type": "Text"
+                  }
+                ],
+                [
+                  "link",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "ExternalLink",
+                      "url": "https://prismic.io"
+                    }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

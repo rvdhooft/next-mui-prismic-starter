@@ -3,7 +3,7 @@ import {
   SettingsDocumentData,
 } from '@/.slicemachine/prismicio';
 import ErrorMessage from '@/components/ErrorMessage';
-import { Layout } from '@/components/Layout';
+import Layout from '@/components/Layout';
 import { createClient } from '@/prismicio';
 import getNavigationAndSettings from '@/utils/getNavigationAndSettings';
 import { GetStaticProps } from 'next';

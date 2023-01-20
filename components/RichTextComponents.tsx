@@ -1,6 +1,7 @@
 import { Typography, styled } from '@mui/material';
 import { PrismicLink } from '@prismicio/react';
 import { ReactNode } from 'react';
+import NextLink from 'next/link';
 
 interface Props {
   children: ReactNode;
@@ -84,6 +85,10 @@ const richTextComponents = {
         textUnderlineOffset: '2px',
         textDecorationThickness: '1px',
       }}
+      internalComponent={({ children, ...props }: any) => (
+        <NextLink {...props}>{children}</NextLink>
+      )}
+      externalComponent="a"
     >
       {children}
     </PrismicLink>
